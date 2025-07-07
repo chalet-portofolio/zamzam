@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>زمزم للشقق المفروشة | اسطنبول</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="logo3.png" />
+    <style>
+      :root {
+        --primary: #b69535; /* درجات الأصفر الغامق */
+        --primary-dark: #9a7d2b;
+        --primary-light: #d4b95d;
+        --text: #333;
+        --light: #f8f8f8;
+        --dark: #222;
+        --overlay: rgba(0, 0, 0, 0.6);
+        --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        --transition: all 0.3s ease;
+        --white: #fff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "IBM Plex Sans Arabic", sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
+
+      .header-logo {
+        height: 70px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+      }
+
+      .header-container {
+        padding: 20px 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 600;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      p {
+        margin-bottom: 1.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background-color: var(--primary);
+        color: white;
+        border-radius: 12px;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        position: relative;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--primary);
+      }
+
+      /* Header Styles */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .logo span {
+        color: var(--dark);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        font-weight: 500;
+        position: relative;
+      }
+
+      nav ul li a:after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        transition: var(--transition);
+      }
+
+      nav ul li a:hover:after {
+        width: 100%;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--primary-light);
+        color: white;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .mobile-toggle {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        background: linear-gradient(var(--overlay), var(--overlay)),
+          url("https://images.unsplash.com/photo-1527838832700-5059252407fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        position: relative;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      /* About Section */
+      .about {
+        background-color: white;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+
+      .about-text h2 {
+        color: var(--primary-dark);
+      }
+
+      .about-features {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+      }
+
+      .feature i {
+        color: var(--primary);
+        font-size: 1.5rem;
+        margin-top: 5px;
+      }
+
+      .about-image {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        position: relative;
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Apartments Section */
+      .apartments {
+        background-color: #f9f9f9;
+      }
+
+      .apartments-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .apartment-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .apartment-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-image {
+        height: 250px;
+        overflow: hidden;
+      }
+
+      .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+      }
+
+      .apartment-card:hover .card-image img {
+        transform: scale(1.1);
+      }
+
+      .card-content {
+        padding: 20px;
+      }
+
+      .card-content h3 {
+        color: var(--primary-dark);
+        margin-bottom: 10px;
+      }
+
+      .apartment-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 15px 0;
+      }
+
+      .apartment-features span {
+        background: #f0f0f0;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+      }
+
+      .card-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+
+      .price {
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      /* Services Section */
+      .services {
+        background-color: white;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        text-align: center;
+        padding: 40px 20px;
+        border-radius: 10px;
+        background: #f9f9f9;
+        transition: var(--transition);
+      }
+
+      .service-card:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-10px);
+      }
+
+      .service-card:hover h3,
+      .service-card:hover i {
+        color: white;
+      }
+
+      .service-card i {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--primary);
+        transition: var(--transition);
+      }
+
+      .service-card h3 {
+        margin-bottom: 15px;
+        transition: var(--transition);
+      }
+
+      /* Testimonials */
+      .testimonials {
+        background: linear-gradient(var(--overlay), var(--overlay)),
+          url("https://images.unsplash.com/photo-1533450718592-29d45635fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        text-align: center;
+      }
+
+      .testimonials .section-title {
+        color: white;
+      }
+
+      .testimonials .section-title:after {
+        background: white;
+      }
+
+      .testimonial-slider {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .testimonial {
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        margin: 20px;
+      }
+
+      .testimonial-content {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .author-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .author-info h4 {
+        margin-bottom: 5px;
+        color: white;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: white;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+      }
+
+      .contact-info h2 {
+        color: var(--primary-dark);
+      }
+
+      .contact-details {
+        margin: 30px 0;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 25px;
+      }
+
+      .contact-item i {
+        color: var(--primary);
+        font-size: 1.5rem;
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 20px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: inherit;
+        font-size: 1rem;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+        resize: vertical;
+      }
+
+      .contact-form .btn {
+        width: 100%;
+      }
+
+      .map-container {
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 40px;
+        box-shadow: var(--shadow);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      /* Floating Buttons */
+      .floating-buttons {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 100;
+      }
+
+      .floating-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        animation: pulse 2s infinite;
+      }
+
+      .floating-btn2 {
+        animation: pulse2 2s infinite;
+      }
+
+      .whatsapp-btn {
+        background-color: #25d366;
+      }
+
+      .map-btn {
+        background-color: #dbdbdb;
+      }
+
+      .map-btn img {
+        width: 40px;
+      }
+
+      .floating-btn:hover {
+        transform: translateY(-5px) scale(1.1);
+        animation: none;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      @keyframes pulse2 {
+        0% {
+          box-shadow: 0 0 0 0 rgba(219, 219, 219, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 60px 0 30px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-logo {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 20px;
+      }
+
+      .footer-about p {
+        color: #aaa;
+      }
+
+      .footer-links h3,
+      .footer-contact h3 {
+        color: white;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-links h3:after,
+      .footer-contact h3:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: var(--primary);
+      }
+
+      .footer-links ul {
+        list-style: none;
+      }
+
+      .footer-links ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-links ul li a {
+        color: #aaa;
+        transition: var(--transition);
+      }
+
+      .footer-links ul li a:hover {
+        color: var(--primary);
+        padding-right: 5px;
+      }
+
+      .footer-contact .contact-item {
+        color: #aaa;
+        margin-bottom: 15px;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #333;
+        color: white;
+        transition: var(--transition);
+      }
+
+      .footer-social a:hover {
+        background: var(--primary);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 40px;
+        margin-top: 40px;
+        border-top: 1px solid #333;
+        color: #777;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+
+        .about-content,
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .about-image {
+          height: 400px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          flex-wrap: wrap;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        nav {
+          width: 100%;
+          max-height: 0;
+          overflow: hidden;
+          transition: var(--transition);
+        }
+
+        nav.active {
+          max-height: 500px;
+          padding: 20px 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        nav ul li {
+          margin-left: 0;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        section {
+          padding: 60px 0;
+        }
+
+        .about-features {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* إخفاء social-icons داخل nav في الشاشات الكبيرة */
+      .social-icons.mobile-only {
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .social-icons.mobile-only {
+          display: flex;
+          margin-top: 20px;
+        }
+
+        /* نخفي السوشيال الأصلية إذا كانت موجودة في الهيدر */
+        .header-container > .social-icons {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Floating Buttons -->
+    <div class="floating-buttons">
+      <a
+        href="https://wa.me/905432220231"
+        class="floating-btn whatsapp-btn"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a
+        href="https://maps.app.goo.gl/qsE46a24jAMSdxEk8?g_st=com.google.maps.preview.copy"
+        class="floating-btn floating-btn2 map-btn"
+        target="_blank"
+      >
+        <img src="google-maps.svg" alt="" />
+      </a>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img src="logo3.png" alt="شعار زمزم" class="header-logo" />
+        </div>
+
+        <div class="mobile-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عن الشركة</a></li>
+            <li><a href="#apartments">الشقق</a></li>
+            <li><a href="#services">الخدمات</a></li>
+            <li><a href="#testimonials">اراء العملاء</a></li>
+            <li><a href="#contact">موقعنـا</a></li>
+          </ul>
+
+          <div class="social-icons mobile-only">
+            <a href="https://snapchat.com/t/hXp5vt7M" target="_blank"><i class="fa-brands fa-snapchat"></i></i></a>
+            <a href="https://www.instagram.com/zamzam_ist?igsh=dnJ4YmM5bml5YmVw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@zamzamsuites?_t=ZS-8xpWeBdcywh&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </nav>
+
+        <div class="social-icons">
+          <a href="https://snapchat.com/t/hXp5vt7M" target="_blank"><i class="fa-brands fa-snapchat"></i></i></a>
+          <a href="https://www.instagram.com/zamzam_ist?igsh=dnJ4YmM5bml5YmVw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@zamzamsuites?_t=ZS-8xpWeBdcywh&_r=1" target="_blank"><i class="fa-brands fa-tiktok" ></i></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>تجربة إقامة فاخرة في قلب اسطنبول</h1>
+        <p>
+          استمتع بإقامة لا تُنسى في شققنا المفروشة بأرقى الأثاث وأفضل الخدمات في
+          أهم أحياء اسطنبول
+        </p>
+        <div class="hero-buttons">
+          <a href="#apartments" class="btn">تصفح الشقق</a>
+          <a href="https://wa.me/905432220231" target="_blank" class="btn btn-outline">احجز الآن</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <h2>عن شركة زمزم</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-text">
+            <h2>رحلتكم تبدأ معنا</h2>
+            <p>
+              تأسست شركة زمزم للشقق المفروشة بهدف تقديم تجربة إقامة
+              فريدة للزائرين في اسطنبول. نحن نؤمن بأن الإقامة المريحة والفاخرة
+              هي أساس أي رحلة ناجحة.
+            </p>
+            <p>
+              خلال السنوات الماضية، استطعنا بناء سمعة ممتازة في مجال تقديم شقق
+              مفروشة عالية الجودة في أفضل المواقع باسطنبول، مع الاهتمام بكل
+              التفاصيل التي تجعل إقامتك لا تُنسى.
+            </p>
+
+            <div class="about-features">
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>مواقع مميزة</h3>
+                  <p>شقق في أفضل أحياء اسطنبول</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>خدمة 24/7</h3>
+                  <p>دعم فني متواصل على مدار الساعة</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>أثاث فاخر</h3>
+                  <p>أجود أنواع الأثاث والديكورات</p>
+                </div>
+              </div>
+              <div class="feature">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                  <h3>تنظيف يومي</h3>
+                  <p>خدمات تنظيف وتغيير مفروشات يومية</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="main.jpg"
+              alt="شقة مفروشة في اسطنبول"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apartments Section -->
+    <section id="apartments" class="apartments">
+      <div class="container">
+        <div class="section-title">
+          <h2>شققنا المفروشة</h2>
+          <p>اختر من بين مجموعة متنوعة من الشقق التي تلبي جميع احتياجاتك</p>
+        </div>
+
+        <div class="apartments-grid">
+          <!-- Apartment 1 -->
+          <div class="apartment-card">
+            <div class="card-image">
+              <img
+                src="pano.jpg"
+                alt="شقة"
+              />
+            </div>
+            <div class="card-content">
+              <h3>إطلالة على وسط المدينه</h3>
+              <p>
+شقة فاخرة بإطلالة ساحرة على وسط المدينة، تصميم راقٍ وخدمة متكاملة لراحة مثالية في قلب الحياة.              </p>
+
+              <div class="apartment-features">
+                <span> غرف نوم</span>
+                <span> صـالة</span>
+                <span>دورة مياة</span>
+              </div>
+
+              <div class="card-price">
+                <a href="https://wa.me/905432220231" class="btn">احجز الآن</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Apartment 2 -->
+          <div class="apartment-card">
+            <div class="card-image">
+              <img
+                src="tower.jpg"
+                alt="شقة"
+              />
+            </div>
+            <div class="card-content">
+              <h3>إطلالة الابراج</h3>
+              <p>
+شقة فاخرة بإطلالة خلابة على أبراج المدينة، تصميم عصري ومرافق متكاملة تضمن تجربة راقية واستثنائية.
+
+              </p>
+
+              <div class="apartment-features">
+                <span> غرف نوم</span>
+                <span> صـالة</span>
+                <span>دورة مياة</span>
+              </div>
+
+              <div class="card-price">
+                <a href="https://wa.me/905432220231" class="btn">احجز الآن</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Apartment 3 -->
+          <div class="apartment-card">
+            <div class="card-image">
+              <img
+                src="towers.jpg"
+                alt="شقة"
+              />
+            </div>
+            <div class="card-content">
+              <h3>إطلالة بانورامية</h3>
+              <p>
+شقة فاخرة بإطلالة بانورامية مفتوحة، تجمع بين الراحة والفخامة في أجواء هادئة وإطلالة تأسر الأنظار.
+
+              </p>
+
+              <div class="apartment-features">
+                <span>  غرفتين نوم</span>
+                <span> صـالة</span>
+                <span>دورة مياة</span>
+              </div>
+
+              <div class="card-price">
+                <a href="https://wa.me/905432220231" class="btn">احجز الآن</a>
+              </div>
+            </div>
+          </div>
+          <!-- Apartment 4 -->
+          <div class="apartment-card">
+            <div class="card-image">
+              <img
+                src="tras1.jpg"
+                alt="شقة"
+              />
+            </div>
+            <div class="card-content">
+              <h3> إطلالة مفتوحة</h3>
+              <p>
+شقة بإطلالة واسعة وغير محجوبة، تمنحك رؤية واضحة للمدينة أو الطبيعة بدون أي مبانٍ أمامك، لتستمتع بالمنظر بأقصى درجات الراحة.             </p>
+
+              <div class="apartment-features">
+                <span> غرفتين نوم</span>
+                <span> صـالة</span>
+                <span> تراس</span>
+                <span>دورة مياة</span>
+              </div>
+
+              <div class="card-price">
+                <a href="https://wa.me/905432220231" class="btn">احجز الآن</a>
+              </div>
+            </div>
+          </div>
+          <!-- Apartment 5 -->
+          <div class="apartment-card">
+            <div class="card-image">
+              <img
+                src="tras2.jpg"
+                alt="شقة"
+              />
+            </div>
+            <div class="card-content">
+              <h3> إطلالة علوية بتراس بانورامي</h3>
+              <p>
+شقة فاخرة بتراس مرتفع يتيح لك رؤية بانورامية للمدينة من الأعلى، مع جلسة خارجية أنيقة تضيف لمسة فاخرة لتجربتك.
+
+             </p>
+
+              <div class="apartment-features">
+                <span> غرف نوم</span>
+                <span> صـالة</span>
+                <span> تراس</span>
+                <span>دورتين مياة  </span>
+              </div>
+
+              <div class="card-price">
+                <a href="https://wa.me/905432220231" class="btn">احجز الآن</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <!-- سيتم إدراج التعديلات هنا في قسم المميزات -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>مميزات الشقق</h2>
+          <p>كل ما تحتاجه لإقامة مثالية ومريحة في اسطنبول</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fas fa-video"></i>
+            <h3>كاميرات مراقبة</h3>
+            <p>نظام أمان متكامل لمراقبة المداخل والممرات على مدار الساعة</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-wifi"></i>
+            <h3>واي فاي سريع</h3>
+            <p>اتصال إنترنت عالي السرعة في كل الشقق</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-elevator"></i>
+            <h3>4 مصاعد</h3>
+            <p>مصاعد حديثة وسريعة تخدم جميع الطوابق</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-broom"></i>
+            <h3>نظافة مجانية</h3>
+            <p>خدمة تنظيف حسب الطلب يومياً</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-snowflake"></i>
+            <h3>تكييف وتدفئة</h3>
+            <p>نظام مناخي متكامل لكل غرفة</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-utensils"></i>
+            <h3>مطبخ متكامل</h3>
+            <p>مطبخ مجهز بكل ما يلزم للطبخ اليومي</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-tshirt"></i>
+            <h3>غسالة ونشافة</h3>
+            <p>معدات لغسيل وتجفيف الملابس داخل الشقة</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-ice-cream"></i>
+            <h3>ثلاجة كبيرة</h3>
+            <p>تبريد مثالي وحفظ للطعام والمشروبات</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-tv"></i>
+            <h3>تلفزيون ذكي</h3>
+            <p>قنوات عربية رياضية وأفلام، بث مباشر HD</p>
+          </div>
+          <div class="service-card">
+            <i class="fas fa-parking"></i>
+            <h3>مواقف سيارات</h3>
+            <p>أماكن مخصصة وآمنة لركن سيارات النزلاء</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-title">
+          <h2>اراء عملائنا</h2>
+          <p>انطباعات وتجارب من إقامتهم معنا</p>
+        </div>
+
+        <div class="testimonial-slider">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              "الإقامة كانت رائعة بكل المقاييس! الشقة نظيفة ومفروشة بأرقى الأثاث
+              والموقع ممتاز في قلب اسطنبول. فريق العمل كان متعاوناً جداً وساعدنا
+              في كل ما نحتاجه. بالتأكيد سأعود مرة أخرى."
+            </div>
+            <div class="testimonial-author">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- location Section -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>موقعنـا</h2>
+          <p>موقعـنا علي الخريطـة </p>
+        </div>
+
+        
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.623552236529!2d28.8127583!3d41.0553607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa568105a2b31%3A0x52fbafdc7e0fa4d7!2sZamZam%20Suites%20Istanbul!5e0!3m2!1sar!2ssa!4v1751921262724!5m2!1sar!2ssa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-about">
+            <div class="logo">
+          <img src="logo3.png" alt="شعار زمزم" class="header-logo" />
+        </div>
+            <p>
+              شركة زمزم للشقق المفروشة تقدم حلول إقامة فاخرة في أفضل مواقع
+              اسطنبول، مع الاهتمام بكل التفاصيل لضمان تجربة إقامة استثنائية.
+            </p>
+            <div class="footer-social">
+              <a href="https://www.instagram.com/zamzam_ist?igsh=dnJ4YmM5bml5YmVw&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://snapchat.com/t/hXp5vt7M" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+              <a href="https://www.tiktok.com/@zamzamsuites?_t=ZS-8xpWeBdcywh&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="#home">الرئيسية</a></li>
+              <li><a href="#about">عن الشركة</a></li>
+              <li><a href="#apartments">الشقق</a></li>
+              <li><a href="#services">الخدمات</a></li>
+              <li><a href="#testimonials">اراء العملاء</a></li>
+              <li><a href="#contact">موقعنـا</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-contact">
+            <h3>معلومات الاتصال</h3>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>حي الفاتح</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <p>905432220231+</p>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>&copy; 2025 زمزم للشقق المفروشة. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileToggle = document.querySelector(".mobile-toggle");
+      const nav = document.querySelector("nav");
+
+      mobileToggle.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+
+      // Sticky Header
+      window.addEventListener("scroll", () => {
+        const header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 100);
+      });
+
+      // Smooth Scrolling for Anchor Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            nav.classList.remove("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
